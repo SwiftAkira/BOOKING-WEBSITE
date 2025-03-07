@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Confirmation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
+        <h1 class="text-2xl font-bold text-gray-800">Thank You for Your Booking!</h1>
+        <p class="mt-4 text-gray-600">Your booking has been confirmed. We look forward to seeing you!</p>
+        <button id="back-to-home" class="btn bg-blue-600 text-white rounded-lg p-2 mt-4 hover:bg-blue-700 transition duration-300">Back to Home</button>
+    </div>
+    <script>
+        // Confetti effect
+        function fireConfetti() {
+            var duration = 3 * 1000;
+            var animationEnd = Date.now() + duration;
+            var defaults = {
+                startVelocity: 30,
+                spread: 360,
+                ticks: 60,
+                zIndex: 9999
+            };
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+            (function frame() {
+                var timeLeft = animationEnd - Date.now();
+                if (timeLeft > 0) {
+                    var particleCount = 50 * (Math.random() + 0.5);
+                    confetti(Object.assign({}, defaults, {
+                        particleCount,
+                        origin: {
+                            x: Math.random(),
+                            // since particles fall down, start a bit higher than random
+                            y: Math.random() - 0.2
+                        }
+                    }));
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
+        fireConfetti();
+        document.getElementById('back-to-home').addEventListener('click', () => {
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>

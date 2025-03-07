@@ -1,0 +1,16 @@
+{
+  "name": "lasertag-booking",
+  "version": "1.0.0",
+  "description": "A website for booking laser tag time slots.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9",
+    "qrcode": "^1.4.4",
+    "sqlite3": "^5.1.7"
+  }
+}

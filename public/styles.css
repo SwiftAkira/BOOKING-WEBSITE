@@ -1,0 +1,106 @@
+@keyframes gradient {
+    0% {
+        background-color: #4facfe;
+    }
+    50% {
+        background-color: #00f2fe;
+    }
+    100% {
+        background-color: #4facfe;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    animation: none;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: black;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+#qr-code {
+    text-align: center;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+#qr-code.show {
+    opacity: 1;
+}
+
+/* Button hover effect */
+.btn {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* Input focus effect */
+input:focus, select:focus {
+    border-color: #1d4ed8;
+    box-shadow: 0 0 5px rgba(29, 78, 216, 0.5);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Loader styles */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
